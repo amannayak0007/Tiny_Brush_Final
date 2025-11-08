@@ -1,6 +1,7 @@
 import SwiftUI
 import PencilKit
 import AVFAudio
+import UIKit
 
 struct DrawingView0: View {
     
@@ -323,7 +324,58 @@ struct DrawingView0: View {
     }
     
     func saveDrawing() {
-        let image = canvas.drawing.image(from: canvas.drawing.bounds, scale: 1)
+        // Get current user interface style from the active window
+        let userInterfaceStyle: UIUserInterfaceStyle
+        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+           let window = windowScene.windows.first {
+            userInterfaceStyle = window.traitCollection.userInterfaceStyle
+        } else {
+            // Fallback to system default
+            userInterfaceStyle = UITraitCollection.current.userInterfaceStyle
+        }
+        
+        // Determine background color based on current mode
+        let backgroundColor: UIColor
+        let drawingTrait: UITraitCollection
+        
+        switch userInterfaceStyle {
+        case .dark:
+            backgroundColor = .black
+            drawingTrait = UITraitCollection(userInterfaceStyle: .dark)
+        default:
+            backgroundColor = .white
+            drawingTrait = UITraitCollection(userInterfaceStyle: .light)
+        }
+        
+        let scale = UIScreen.main.scale
+        var bounds = canvas.drawing.bounds
+        
+        // If drawing bounds are empty, use canvas bounds as fallback
+        if bounds.isEmpty || bounds.width == 0 || bounds.height == 0 {
+            bounds = canvas.bounds
+        }
+        
+        // Ensure we have a valid size
+        if bounds.width <= 0 || bounds.height <= 0 {
+            // If still invalid, use a default size
+            bounds = CGRect(x: 0, y: 0, width: 1024, height: 1024)
+        }
+        
+        let size = CGSize(width: bounds.width, height: bounds.height)
+        
+        let renderer = UIGraphicsImageRenderer(size: size)
+        let image = renderer.image { context in
+            // Fill with background color matching current mode
+            backgroundColor.setFill()
+            context.fill(CGRect(origin: .zero, size: size))
+            
+            // Draw the PKDrawing with the same trait collection to preserve appearance
+            drawingTrait.performAsCurrent {
+                let drawingImage = canvas.drawing.image(from: bounds, scale: scale)
+                drawingImage.draw(at: .zero)
+            }
+        }
+        
         UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
     }
     
