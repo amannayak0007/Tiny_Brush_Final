@@ -1,0 +1,21 @@
+
+
+import Foundation
+import RevenueCat
+import SwiftUI
+
+class UserViewModel: ObservableObject {
+    
+    static let shared = UserViewModel()
+    
+    /* The latest CustomerInfo from RevenueCat. Updated by PurchasesDelegate whenever the Purchases SDK updates the cache */
+    @Published var customerInfo: CustomerInfo? {
+        didSet {
+            subscriptionActive = customerInfo?.entitlements[Constants.entitlementID]?.isActive == true
+        }
+    }
+    
+    /* Set from the didSet method of customerInfo above, based on the entitlement set in Constants.swift */
+    @Published var subscriptionActive: Bool = false
+  
+}

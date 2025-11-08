@@ -1,0 +1,20 @@
+/* 
+  Localizable.strings
+  Colouring for kids
+
+  Created by Aman Jain on 06/04/23.
+  
+*/
+
+"show_purchase_popup_title" = "解鎖全部內容 🚀";
+"show_purchase_popup_message" = "獲取所有高級內容的完全訪問權限。";
+"restore_purchase_button_title" = "恢復購買";
+"cancel_button_title" = "取消";
+"please_wait_message" = "請稍候...";
+"unlock_button_title" = "解鎖";
+"unlock_all_content_title" = "解鎖全部內容 🚀";
+"unlock_all_content_message" = "獲取所有高級內容的完全訪問權限。";
+"thank_you_title" = "謝謝";
+"thank_you_message" = "感謝您的購買！";
+"ok_button_title" = "確定";
+"thank_You" = "謝謝";

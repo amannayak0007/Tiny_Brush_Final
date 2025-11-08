@@ -1,0 +1,13 @@
+{
+  "data" : [
+    {
+      "filename" : "478908__skibkamusic__skibka-music-logo-pn24.wav",
+      "idiom" : "universal",
+      "universal-type-identifier" : "com.microsoft.waveform-audio"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

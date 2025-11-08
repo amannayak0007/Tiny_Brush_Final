@@ -1,0 +1,19 @@
+/* 
+  Localizable.strings
+  Colouring for kids
+
+  Created by Aman Jain on 06/04/23.
+  
+*/
+
+"show_purchase_popup_title" = "فتح جميع المحتويات 🚀";
+"show_purchase_popup_message" = "احصل على الوصول الكامل إلى جميع المحتويات المتميزة.";
+"restore_purchase_button_title" = "استعادة الشراء";
+"cancel_button_title" = "إلغاء";
+"please_wait_message" = "يرجى الانتظار...";
+"unlock_button_title" = "فتح";
+"unlock_all_content_title" = "فتح جميع المحتويات 🚀";
+"unlock_all_content_message" = "احصل على وصول كامل إلى جميع المحتويات الرائعة.";
+"thank_you_message" = "شكراً لشرائك!";
+"ok_button_title" = "موافق";
+"thank_You" = "شكرًا لك";

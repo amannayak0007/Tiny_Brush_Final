@@ -1,0 +1,28 @@
+PODS:
+  - DynamicBlurView (4.1.0)
+  - lottie-ios (3.4.4)
+  - PopupDialog (1.1.1):
+    - DynamicBlurView (~> 4.0)
+  - SnapKit (5.7.1)
+
+DEPENDENCIES:
+  - lottie-ios (~> 3.4.0)
+  - PopupDialog (~> 1.1)
+  - SnapKit
+
+SPEC REPOS:
+  trunk:
+    - DynamicBlurView
+    - lottie-ios
+    - PopupDialog
+    - SnapKit
+
+SPEC CHECKSUMS:
+  DynamicBlurView: 58e18fae80bb614e34681a4486870e7d257b62e8
+  lottie-ios: 8f97d3271e155c2d688875c29cd3c74908aef5f8
+  PopupDialog: 720c92befd8bc23c13442254945213db5612f149
+  SnapKit: d612e99e678a2d3b95bf60b0705ed0a35c03484a
+
+PODFILE CHECKSUM: 67ac1008a929fed39e037a35b60e0c46a4dd7001
+
+COCOAPODS: 1.16.2
